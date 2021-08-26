@@ -6,7 +6,7 @@ const authRoute = require('./routes/auth')
 const userRoute = require('./routes/users')
 const postRoute = require('./routes/posts')
 const cityRoute = require('./routes/cities')
-//const cors = require('cors')
+const cors = require('cors')
 const recommendedRoute = require('./routes/recommended.js')
 
 const categoryRoute = require('./routes/categories')
@@ -14,7 +14,7 @@ const multer = require('multer')
 const path = require('path')
 
 dotenv.config()
-//app.use(cors())
+app.use(cors())
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
