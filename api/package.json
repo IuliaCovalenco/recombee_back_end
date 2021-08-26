@@ -1,0 +1,26 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "pressclub",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.7",
+    "multer": "^1.4.3",
+    "path": "^0.12.7",
+    "react-redux": "^7.2.4",
+    "recombee-api-client": "^3.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "scripts": {
+    "test": "start api",
+    "start": "nodemon index.js"
+  },
+  "author": "Iulia Covalenco",
+  "license": "ISC"
+}
