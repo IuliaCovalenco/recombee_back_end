@@ -23,7 +23,8 @@
   },
   "scripts": {
     "test": "start api",
-    "start": "nodemon index.js"
+    "start:dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "Iulia Covalenco",
   "license": "ISC"
