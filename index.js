@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
@@ -6,7 +7,7 @@ const authRoute = require('./routes/auth')
 const userRoute = require('./routes/users')
 const postRoute = require('./routes/posts')
 const cityRoute = require('./routes/cities')
-const cors = require('cors')
+
 const recommendedRoute = require('./routes/recommended.js')
 
 const categoryRoute = require('./routes/categories')

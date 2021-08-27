@@ -50,7 +50,7 @@ router.post('/recommended', async function (req, res, next) {
 
   console.log(userID)
   //const userID = '611ae48cfa50de5d5cad507a'
-  const numberRec = 17
+  const numberRec = 10
 
   //recombee -----
   const recomendados = await getRecUsers(userID, numberRec, {
