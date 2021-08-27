@@ -127,10 +127,60 @@ router.post('/recommended/culture', async function (req, res, next) {
   })
 })
 
+router.post('/recommended/culture/limit', async function (req, res, next) {
+  //passar estas variáveis para o que vem no body da request
+  const userID = req.body.user
+  const numberRec = 4
+
+  //recombee -----
+  const recomendados = await getRecUsersCulture(userID, numberRec, {
+    'scenario': 'home_user_cultura',
+  })
+  //recombee _______ FINISH HERE
+
+  let arrayIDs = []
+  recomendados.recomms.forEach((data) => {
+    arrayIDs.push(data.id)
+  })
+  Post.find({
+    _id: {
+      $in: arrayIDs,
+    },
+  }).then((data) => {
+    res.status(200)
+    res.json(data.map((d) => d.toJSON()))
+  })
+})
+
 router.post('/recommended/desporto', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   const userID = req.body.user
   const numberRec = 10
+
+  //recombee -----
+  const recomendados = await getRecUsersDesporto(userID, numberRec, {
+    'scenario': 'home_user_desporto',
+  })
+  //recombee _______ FINISH HERE
+
+  let arrayIDs = []
+  recomendados.recomms.forEach((data) => {
+    arrayIDs.push(data.id)
+  })
+  Post.find({
+    _id: {
+      $in: arrayIDs,
+    },
+  }).then((data) => {
+    res.status(200)
+    res.json(data.map((d) => d.toJSON()))
+  })
+})
+
+router.post('/recommended/desporto/limit', async function (req, res, next) {
+  //passar estas variáveis para o que vem no body da request
+  const userID = req.body.user
+  const numberRec = 4
 
   //recombee -----
   const recomendados = await getRecUsersDesporto(userID, numberRec, {
@@ -177,10 +227,60 @@ router.post('/recommended/politica', async function (req, res, next) {
   })
 })
 
+router.post('/recommended/politica/limit', async function (req, res, next) {
+  //passar estas variáveis para o que vem no body da request
+  const userID = req.body.user
+  const numberRec = 4
+
+  //recombee -----
+  const recomendados = await getRecUsersPolitics(userID, numberRec, {
+    'scenario': 'home_user_politics',
+  })
+  //recombee _______ FINISH HERE
+
+  let arrayIDs = []
+  recomendados.recomms.forEach((data) => {
+    arrayIDs.push(data.id)
+  })
+  Post.find({
+    _id: {
+      $in: arrayIDs,
+    },
+  }).then((data) => {
+    res.status(200)
+    res.json(data.map((d) => d.toJSON()))
+  })
+})
+
 router.post('/recommended/sustentabilidade', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   const userID = req.body.user
   const numberRec = 10
+
+  //recombee -----
+  const recomendados = await getRecUsersSustentabilidade(userID, numberRec, {
+    'scenario': 'home_user_sustentabilidade',
+  })
+  //recombee _______ FINISH HERE
+
+  let arrayIDs = []
+  recomendados.recomms.forEach((data) => {
+    arrayIDs.push(data.id)
+  })
+  Post.find({
+    _id: {
+      $in: arrayIDs,
+    },
+  }).then((data) => {
+    res.status(200)
+    res.json(data.map((d) => d.toJSON()))
+  })
+})
+
+router.post('/recommended/sustentabilidade/limit', async function (req, res, next) {
+  //passar estas variáveis para o que vem no body da request
+  const userID = req.body.user
+  const numberRec = 4
 
   //recombee -----
   const recomendados = await getRecUsersSustentabilidade(userID, numberRec, {
@@ -228,11 +328,61 @@ router.post('/recommended/economia', async function (req, res, next) {
   })
 })
 
+router.post('/recommended/economia/limit', async function (req, res, next) {
+  //passar estas variáveis para o que vem no body da request
+  const userID = req.body.user
+  const numberRec = 4
+
+  //recombee -----
+  const recomendados = await getRecUsersEconomia(userID, numberRec, {
+    'scenario': 'home_user_economia',
+  })
+  //recombee _______ FINISH HERE
+
+  let arrayIDs = []
+  recomendados.recomms.forEach((data) => {
+    arrayIDs.push(data.id)
+  })
+  Post.find({
+    _id: {
+      $in: arrayIDs,
+    },
+  }).then((data) => {
+    res.status(200)
+    res.json(data.map((d) => d.toJSON()))
+  })
+})
+
 
 router.post('/recommended/saude', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   const userID = req.body.user
   const numberRec = 10
+
+  //recombee -----
+  const recomendados = await getRecUsersSaude(userID, numberRec, {
+    'scenario': 'home_user_saude',
+  })
+  //recombee _______ FINISH HERE
+
+  let arrayIDs = []
+  recomendados.recomms.forEach((data) => {
+    arrayIDs.push(data.id)
+  })
+  Post.find({
+    _id: {
+      $in: arrayIDs,
+    },
+  }).then((data) => {
+    res.status(200)
+    res.json(data.map((d) => d.toJSON()))
+  })
+})
+
+router.post('/recommended/saude/limit', async function (req, res, next) {
+  //passar estas variáveis para o que vem no body da request
+  const userID = req.body.user
+  const numberRec = 4
 
   //recombee -----
   const recomendados = await getRecUsersSaude(userID, numberRec, {
@@ -279,6 +429,33 @@ router.post('/recommended/tecnologia', async function (req, res, next) {
     res.json(data.map((d) => d.toJSON()))
   })
 })
+
+
+router.post('/recommended/tecnologia/limit', async function (req, res, next) {
+  //passar estas variáveis para o que vem no body da request
+  const userID = req.body.user
+  const numberRec = 4
+
+  //recombee -----
+  const recomendados = await getRecUsersTecnologia(userID, numberRec, {
+    'scenario': 'home_user_tecnologia',
+  })
+  //recombee _______ FINISH HERE
+
+  let arrayIDs = []
+  recomendados.recomms.forEach((data) => {
+    arrayIDs.push(data.id)
+  })
+  Post.find({
+    _id: {
+      $in: arrayIDs,
+    },
+  }).then((data) => {
+    res.status(200)
+    res.json(data.map((d) => d.toJSON()))
+  })
+})
+
 
 router.post('/recommended/click', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
