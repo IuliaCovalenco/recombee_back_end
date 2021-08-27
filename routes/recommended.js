@@ -105,7 +105,7 @@ router.post('/recommended/personal', async function (req, res, next) {
 router.post('/recommended/culture', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   const userID = req.body.user
-  const numberRec = 10
+  const numberRec = 50
 
   //recombee -----
   const recomendados = await getRecUsersCulture(userID, numberRec, {
@@ -155,7 +155,7 @@ router.post('/recommended/culture/limit', async function (req, res, next) {
 router.post('/recommended/desporto', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   const userID = req.body.user
-  const numberRec = 10
+  const numberRec = 50
 
   //recombee -----
   const recomendados = await getRecUsersDesporto(userID, numberRec, {
@@ -205,7 +205,7 @@ router.post('/recommended/desporto/limit', async function (req, res, next) {
 router.post('/recommended/politica', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   const userID = req.body.user
-  const numberRec = 10
+  const numberRec = 50
 
   //recombee -----
   const recomendados = await getRecUsersPolitics(userID, numberRec, {
@@ -255,7 +255,7 @@ router.post('/recommended/politica/limit', async function (req, res, next) {
 router.post('/recommended/sustentabilidade', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   const userID = req.body.user
-  const numberRec = 10
+  const numberRec = 50
 
   //recombee -----
   const recomendados = await getRecUsersSustentabilidade(userID, numberRec, {
@@ -306,7 +306,7 @@ router.post('/recommended/sustentabilidade/limit', async function (req, res, nex
 router.post('/recommended/economia', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   const userID = req.body.user
-  const numberRec = 10
+  const numberRec = 50
 
   //recombee -----
   const recomendados = await getRecUsersEconomia(userID, numberRec, {
@@ -357,7 +357,7 @@ router.post('/recommended/economia/limit', async function (req, res, next) {
 router.post('/recommended/saude', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   const userID = req.body.user
-  const numberRec = 10
+  const numberRec = 50
 
   //recombee -----
   const recomendados = await getRecUsersSaude(userID, numberRec, {
@@ -408,7 +408,7 @@ router.post('/recommended/saude/limit', async function (req, res, next) {
 router.post('/recommended/tecnologia', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   const userID = req.body.user
-  const numberRec = 10
+  const numberRec = 50
 
   //recombee -----
   const recomendados = await getRecUsersTecnologia(userID, numberRec, {
