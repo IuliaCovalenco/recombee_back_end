@@ -16,15 +16,21 @@ const path = require('path')
 
 dotenv.config()
 
-app.listen(process.env.PORT || 5000 );
+const corsOptions = {
+  origin: 'https://pressclubua.herokuapp.com/',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
+app.post('/post/:id', cors(corsOptions), function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for only example.com.'})
+})
 
+//app.use(cors())
 
-
-app.use(function (req, res, next) {
+/*app.use(function (req, res, next) {
 
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'https://pressclubua.herokuapp.com');
 
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -38,9 +44,7 @@ app.use(function (req, res, next) {
 
   // Pass to next layer of middleware
   next();
-});
-
-
+});*/
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
@@ -77,7 +81,7 @@ app.post('/api/upload', upload.single('file'), (req, res) => {
   console.log('Backend is running.')
 })*/
 
-
+app.listen(process.env.PORT || 5000 );
 
 app.post('/users', (req, res) => {
   console.log(req.body.user)
