@@ -15,11 +15,17 @@ const multer = require('multer')
 const path = require('path')
 
 dotenv.config()
+
+app.listen(process.env.PORT || 5000 );
+
+
 app.use(cors({
- origin: '*'
+  origin: "*" ,
+  methods: "POST"
+
 }))
 
-app.use(function (req, res, next) {
+/*app.use(function (req, res, next) {
 
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -36,7 +42,7 @@ app.use(function (req, res, next) {
 
   // Pass to next layer of middleware
   next();
-});
+});*/
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
@@ -73,7 +79,7 @@ app.post('/api/upload', upload.single('file'), (req, res) => {
   console.log('Backend is running.')
 })*/
 
-app.listen(process.env.PORT || 5000 );
+
 
 app.post('/users', (req, res) => {
   console.log(req.body.user)
