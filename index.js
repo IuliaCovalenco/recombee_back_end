@@ -25,7 +25,7 @@ app.post('/post/:id', cors(corsOptions), function (req, res, next) {
   res.json({msg: 'This is CORS-enabled for only example.com.'})
 })
 
-//app.use(cors())
+app.use(cors())
 
 /*app.use(function (req, res, next) {
 
