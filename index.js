@@ -15,9 +15,11 @@ const multer = require('multer')
 const path = require('path')
 
 dotenv.config()
-app.use(cors())
+app.use(cors({
+  methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}))
 
-app.use( cors(), function (req, res, next) {
+/*app.use(function (req, res, next) {
 
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', 'https://pressclubua.herokuapp.com');
@@ -34,7 +36,7 @@ app.use( cors(), function (req, res, next) {
 
   // Pass to next layer of middleware
   next();
-});
+});*/
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
