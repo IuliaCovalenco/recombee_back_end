@@ -15,7 +15,7 @@ const multer = require('multer')
 const path = require('path')
 
 dotenv.config()
-app.use(cors({origin: '*'}))
+app.use(cors({origin: 'https://pressclubua.herokuapp.com/'}))
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
