@@ -19,13 +19,9 @@ dotenv.config()
 app.listen(process.env.PORT || 5000 );
 
 
-app.use(cors({
-  origin: "*" ,
-  methods: "POST"
 
-}))
 
-/*app.use(function (req, res, next) {
+app.use(function (req, res, next) {
 
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -42,7 +38,9 @@ app.use(cors({
 
   // Pass to next layer of middleware
   next();
-});*/
+});
+
+
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))

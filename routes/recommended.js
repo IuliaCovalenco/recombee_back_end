@@ -6,13 +6,7 @@ const User = require('../models/User')
 const Post = require('../models/Post')
 
 const axios = require('axios')
-const cors = require('cors')
 
-app.use(cors({
-  origin: "*" ,
-  methods: "POST"
-
-}))
 
 const addDetail = require('../recomendations/recomendations.js').addDetail
 
