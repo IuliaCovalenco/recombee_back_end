@@ -16,7 +16,7 @@ const path = require('path')
 
 dotenv.config()
 app.use(cors({
-  origin: 'https://pressclubua.herokuapp.com/post/',
+  origin: 'https://pressclubua.herokuapp.com',
   methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }))
 
