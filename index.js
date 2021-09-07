@@ -16,14 +16,13 @@ const path = require('path')
 
 dotenv.config()
 app.use(cors({
-  origin: 'https://pressclubua.herokuapp.com',
-  methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+ origin: '*'
 }))
 
-/*app.use(function (req, res, next) {
+app.use(function (req, res, next) {
 
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', 'https://pressclubua.herokuapp.com');
+  res.setHeader('Access-Control-Allow-Origin', '*');
 
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -37,7 +36,7 @@ app.use(cors({
 
   // Pass to next layer of middleware
   next();
-});*/
+});
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
