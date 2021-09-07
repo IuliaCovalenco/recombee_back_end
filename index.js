@@ -14,6 +14,8 @@ const categoryRoute = require('./routes/categories')
 const multer = require('multer')
 const path = require('path')
 
+
+app.use(cors())
 dotenv.config()
 
 const corsOptions = {
@@ -25,7 +27,7 @@ app.post('/post/:id', cors(corsOptions), function (req, res, next) {
   res.json({msg: 'This is CORS-enabled for only example.com.'})
 })
 
-app.use(cors())
+
 
 /*app.use(function (req, res, next) {
 
