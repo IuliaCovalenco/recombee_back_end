@@ -17,12 +17,12 @@ const path = require('path')
 
 app.use(cors( {
   origin: 'https://pressclubua.herokuapp.com',
-  methods: [ 'POST', 'GET']
+  credentials:true,
 }))
 dotenv.config()
 
 
-/*app.use(function (req, res, next) {
+app.use(function (req, res, next) {
 
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', 'https://pressclubua.herokuapp.com');
@@ -31,7 +31,7 @@ dotenv.config()
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
   // Request headers you wish to allow
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Headers', true);
 
   // Set to true if you need the website to include cookies in the requests sent
   // to the API (e.g. in case you use sessions)
@@ -39,7 +39,7 @@ dotenv.config()
 
   // Pass to next layer of middleware
   next();
-});*/
+});
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
