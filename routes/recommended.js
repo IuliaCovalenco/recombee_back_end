@@ -476,6 +476,7 @@ router.post('/recommended/click', async function (req, res, next) {
   } else res.status(404)
 })
 
+//é sum estupido 
 
 module.exports = router
 
