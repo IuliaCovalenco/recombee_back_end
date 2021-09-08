@@ -16,16 +16,17 @@ const path = require('path')
 
 
 app.use(cors( {
-  origin: 'https://pressclubua.herokuapp.com',
-  credentials:true,
+  origin: '*',
 }))
 dotenv.config()
 
 
 app.use(function (req, res, next) {
 
+  console.log(req, res, next);
+
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', 'https://pressclubua.herokuapp.com');
+  res.setHeader('Access-Control-Allow-Origin', '*');
 
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
