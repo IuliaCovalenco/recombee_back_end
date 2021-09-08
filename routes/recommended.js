@@ -470,7 +470,10 @@ router.post('/recommended/click', async function (req, res, next) {
   const vistos = await addDetail(userID, itemID)
   //recombee _______ FINISH HERE
   console.log(vistos)
-  return vistos
+  if(vistos === "ok"){
+    res.status(200)
+    res.json("works")
+  } else res.status(404)
 })
 
 
