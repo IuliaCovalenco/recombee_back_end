@@ -12,7 +12,7 @@ const addDetail = (userID, itemID) => {
     return result;
   })
   .catch((err) => {
-    console.log(err)
+    return err
   })
 }
 

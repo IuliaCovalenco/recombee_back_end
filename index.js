@@ -80,11 +80,9 @@ app.post('/api/upload', upload.single('file'), (req, res) => {
 app.listen(process.env.PORT || 5000 );
 
 app.post('/users', (req, res) => {
-  console.log(req.body.user)
 })
 
 app.post('/posts', (req, res) => {
-  console.log(req.body.post)
 })
 
 

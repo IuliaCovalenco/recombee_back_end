@@ -46,10 +46,8 @@ const client = new recombee.ApiClient(
 router.post('/recommended', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   
-  console.log('body -> ', req.body)
   const userID = req.body.user
 
-  console.log(userID)
   //const userID = '611ae48cfa50de5d5cad507a'
   const numberRec = 8
 
@@ -76,10 +74,8 @@ router.post('/recommended', async function (req, res, next) {
 router.post('/recommended/personal', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   
-  console.log('body -> ', req.body)
   const userID = req.body.user
 
-  console.log(userID)
   //const userID = '611ae48cfa50de5d5cad507a'
   const numberRec = 4
 
@@ -460,16 +456,14 @@ router.post('/recommended/tecnologia/limit', async function (req, res, next) {
 
 router.post('/recommended/click', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
-  console.log('body -> ', req.body)
   const userID = req.body.user
-  console.log(userID)
   
   const itemID = req.body.postID
 
   //recombee -----
   const vistos = await addDetail(userID, itemID)
   //recombee _______ FINISH HERE
-  console.log(vistos)
+  console.log("vistos ->", vistos)
   if(vistos === "ok"){
     res.status(200)
     res.json("works")
