@@ -149,6 +149,7 @@ router.post('/recommended/culture/limit', async function (req, res, next) {
   })
 })
 
+
 router.post('/recommended/desporto', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   const userID = req.body.user
@@ -173,6 +174,7 @@ router.post('/recommended/desporto', async function (req, res, next) {
     res.json(data.map((d) => d.toJSON()))
   })
 })
+
 
 router.post('/recommended/desporto/limit', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
@@ -199,6 +201,7 @@ router.post('/recommended/desporto/limit', async function (req, res, next) {
   })
 })
 
+
 router.post('/recommended/politica', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   const userID = req.body.user
@@ -223,6 +226,7 @@ router.post('/recommended/politica', async function (req, res, next) {
     res.json(data.map((d) => d.toJSON()))
   })
 })
+
 
 router.post('/recommended/politica/limit', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
@@ -249,6 +253,7 @@ router.post('/recommended/politica/limit', async function (req, res, next) {
   })
 })
 
+
 router.post('/recommended/sustentabilidade', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   const userID = req.body.user
@@ -273,6 +278,7 @@ router.post('/recommended/sustentabilidade', async function (req, res, next) {
     res.json(data.map((d) => d.toJSON()))
   })
 })
+
 
 router.post('/recommended/sustentabilidade/limit', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
@@ -325,6 +331,7 @@ router.post('/recommended/economia', async function (req, res, next) {
   })
 })
 
+
 router.post('/recommended/economia/limit', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
   const userID = req.body.user
@@ -375,6 +382,7 @@ router.post('/recommended/saude', async function (req, res, next) {
     res.json(data.map((d) => d.toJSON()))
   })
 })
+
 
 router.post('/recommended/saude/limit', async function (req, res, next) {
   //passar estas variáveis para o que vem no body da request
@@ -470,7 +478,9 @@ router.post('/recommended/click', async function (req, res, next) {
   } else res.status(404)
 })
 
+
 //é sum estupido 
+
 
 module.exports = router
 
